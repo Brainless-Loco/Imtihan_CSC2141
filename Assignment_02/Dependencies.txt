@@ -1,0 +1,26 @@
+User Table Dependency Diagram:
+	No dependencies within the User table.
+
+
+Post Table Dependency Diagram:
+	UserID -> User Table
+	PostID, UserID -> Comment Table
+	PostID, UserID -> Like Table
+
+
+Comment Table Dependency Diagram:
+	PostID -> Post Table
+	UserID -> User Table
+
+
+Friendship Table Dependency Diagram:
+	UserID1, UserID2 -> User Table
+
+
+Like Table Dependency Diagram:
+	PostID, UserID -> Post Table
+	UserID -> User Table
+
+
+Notification Table Dependency Diagram:
+	UserID -> User Table
