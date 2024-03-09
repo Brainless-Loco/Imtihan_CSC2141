@@ -1,22 +1,3 @@
-INSERT INTO users (UserID, Username, Email, Password, FirstName, LastName, DateOfBirth, ProfilePicture)
-VALUES 
-  (1, 'john_doe', 'john@example.com', 'password123', 'John', 'Doe', '1990-01-01', 'profile_pic_1.jpg'),
-  (2, 'jane_smith', 'jane@example.com', 'pass456', 'Jane', 'Smith', '1985-05-15', 'profile_pic_2.jpg'),
-  (3, 'alice_jones', 'alice@example.com', 'securepass', 'Alice', 'Jones', '1992-09-30', 'profile_pic_3.jpg'),
-  (4, 'bob_smith', 'bob@example.com', 'pass123', 'Bob', 'Smith', '1988-03-20', 'profile_pic_4.jpg'),
-  (5, 'emma_davis', 'emma@example.com', 'secure456', 'Emma', 'Davis', '1995-12-10', 'profile_pic_5.jpg'),
-  (6, 'mike_jackson', 'mike@example.com', 'password789', 'Mike', 'Jackson', '1982-07-05', 'profile_pic_6.jpg'),
-  (7, 'susan_wilson', 'susan@example.com', 'pass789', 'Susan', 'Wilson', '1993-04-18', 'profile_pic_7.jpg'),
-  (8, 'david_brown', 'david@example.com', 'secure789', 'David', 'Brown', '1989-11-25', 'profile_pic_8.jpg'),
-  (9, 'lisa_taylor', 'lisa@example.com', 'passwordabc', 'Lisa', 'Taylor', '1997-06-15', 'profile_pic_9.jpg'),
-  (10, 'kevin_martin', 'kevin@example.com', 'passabc', 'Kevin', 'Martin', '1984-02-08', 'profile_pic_10.jpg'),
-  (11, 'carol_white', 'carol@example.com', 'secureabc', 'Carol', 'White', '1990-10-28', 'profile_pic_11.jpg'),
-  (12, 'peter_thomas', 'peter@example.com', 'passwordxyz', 'Peter', 'Thomas', '1986-08-12', 'profile_pic_12.jpg'),
-  (13, 'natalie_green', 'natalie@example.com', 'passxyz', 'Natalie', 'Green', '1994-03-05', 'profile_pic_13.jpg'),
-  (14, 'steve_harris', 'steve@example.com', 'securexyz', 'Steve', 'Harris', '1981-12-22', 'profile_pic_14.jpg'),
-  (15, 'olivia_carter', 'olivia@example.com', 'password456', 'Olivia', 'Carter', '1998-09-14', 'profile_pic_15.jpg');
-
-
 INSERT INTO posts (PostID, UserID, Content, Timestamp)
 VALUES 
   (1, 1, 'This is my first post!', '2024-03-08 10:00:00'),

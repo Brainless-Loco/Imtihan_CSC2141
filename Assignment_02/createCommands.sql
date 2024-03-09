@@ -1,13 +1,15 @@
-CREATE TABLE users (
-    UserID INT PRIMARY KEY,
-    Username VARCHAR(255) NOT NULL,
-    Email VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL,
-    FirstName VARCHAR(255),
-    LastName VARCHAR(255),
-    DateOfBirth DATE,
-    ProfilePicture VARCHAR(255)
+CREATE TABLE `users` (
+  `UserID` int NOT NULL,
+  `Username` varchar(255) NOT NULL,
+  `FirstName` varchar(255) DEFAULT NULL,
+  `LastName` varchar(255) DEFAULT NULL,
+  `DateOfBirth` date DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `City` varchar(255) DEFAULT NULL,
+  `Country` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`UserID`)
 );
+
 
 CREATE TABLE posts (
     PostID INT PRIMARY KEY,
