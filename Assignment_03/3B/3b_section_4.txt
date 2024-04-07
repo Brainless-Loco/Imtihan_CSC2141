@@ -1,0 +1,57 @@
+The dataset is derived from a football dataset available on Kaggle, titled as the "Football Database". The dataset was provided by user Technika148. The dataset is licensed under CC0: Public Domain, making it freely available for use. It has total 7 csv files with 87 columns in total.
+
+Dataset Link: https://www.kaggle.com/datasets/technika148/football-database/data
+
+Our designed database comprises seven tables, each representing a different aspect of football data:
+1. leagues: Contains basic information about football leagues, including league ID, name, and understat notation.
+2. teams: Stores basic information about football teams, such as team ID and name.
+3. players: Holds data about football players, including player ID and name.
+4. games: Contains information about football matches, including game ID, season, date, participating teams, and match outcomes.
+5. shots: Stores data related to shots taken during football matches, such as shooter ID, shot type, and shot result.
+6. teamstats: Contains statistics about football teams in matches, including goals, expected goals, shots, and other performance metrics.
+7. appearances: Records player appearances in football matches, including goals, assists, and other relevant player statistics.
+
+In total, the database has 81 attributes across the seven tables, providing comprehensive coverage of various aspects of football data.
+
+Business Rules:
+
+1. Each game must belong to a valid league: This rule is expressed as a foreign key constraint in the "games" table, where the "leagueID" column references the "leagueID" column in the "leagues" table. This constraint ensures that every game is associated with a valid league.
+
+2. To enforce this rule, the playerID column in the appearances table is constrained by a foreign key reference to the playerID column in the players table. This ensures that each appearance record is associated with a valid player.
+
+3. Goals scored must be non-negative: To enforce this rule, a check constraint can be applied to the "goals" column in the "teamstats" and "appearances" tables to ensure that the number of goals scored is always non-negative. This constraint prevents the recording of negative goal counts, which is logically invalid in the context of football statistics.
+
+4. A player can only be listed as a shooter or assister if they have made an appearance in the corresponding game: This rule ensures that any player listed as a shooter or assister in the shots table has made an appearance in the corresponding game. It can be enforced by creating a foreign key constraint between the "shooterID" and "assisterID" columns in the shots table and the "playerID" column in the "appearances" table, ensuring that only valid players can be listed as shooters or assisters in shots data.
+
+5. Each team must have a unique name within a league: This rule ensures that no two teams within the same league have the same name, as it could lead to confusion and ambiguity. It can be enforced by adding a unique constraint to the name column in the teams table, scoped within the "leagueID" column. This constraint ensures that each team's name is unique within the context of its associated league.
+
+
+
+Explanation of the queries:
+
+Query 1: Total number of games on season 2015
+
+This query retrieves the total number of games that occurred during the 2015 season. It provides a count of all games recorded in the games table where the season is equal to 2015.
+
+
+Query 2: Info about each game along with the home team and away team names
+
+This query retrieves detailed information about each game, including the game ID, season, date, home team ID, and away team ID. Additionally, it includes the names of the home and away teams by joining the teams table twice based on the home and away team IDs.
+
+
+Query 3: Total goals for a team
+
+This query calculates the total number of goals scored by each team across all matches recorded in the teamstats table. It provides a summary of goals scored for each team, along with the team name, by joining the teams table and aggregating the total goals using the SUM function.
+
+
+Query 4: Players Exceeding Average Goals
+This query identifies players whose number of goals scored exceeds the average number of goals scored across all players. It retrieves player IDs, names, and goals from the appearances table, filtering for players whose goal count is higher than the average goal count calculated using a subquery.
+
+Query 5: View
+
+This sequence of queries demonstrates the use of views, data retrieval, table modification, and re-querying.
+
+Step 1 creates a view named game_stats_view that combines information from the games and teamstats tables, including derived attributes such as goal difference.
+Step 2 retrieves data from the created view.
+Step 3 modifies the xGoals column in the teamstats table for a specific game.
+Step 4 re-queries the view to reflect changes made to the underlying tables and derived attributes.
